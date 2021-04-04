@@ -8,13 +8,12 @@
 
     <ImageView
         android:id="@+id/ivState"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="263dp"
+        android:layout_height="281dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/tvGAN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wait" />
@@ -23,8 +22,10 @@
         android:id="@+id/clNumPad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -141,7 +142,7 @@
         android:id="@+id/tvGAN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/min_space"
+        android:layout_marginBottom="24dp"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/clNumPad"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,5 +155,20 @@
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/swLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:showText="true"
+        android:splitTrack="true"
+        android:textOff="@string/_hard"
+        android:textOn="@string/_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivState"
+        tools:checked="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

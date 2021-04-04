@@ -11,4 +11,8 @@
     <string name="_5">5</string>
     <string name="_4">4</string>
     <string name="_3">3</string>
+    <string name="_hard">Hard</string>
+    <string name="_normal">Normal</string>
+    <string name="_normalChecked">Max 20 errors</string>
+    <string name="_hardChecked">Max 10 errors</string>
 </resources>

@@ -2,8 +2,7 @@ package com.example.guessanumber
 
 import kotlin.random.Random
 
-class GAN(var maxAttempts : Int) {
-    private var maxValue =100
+class GAN(var maxAttempts : Int, var maxValue: Int) {
     private var toGuess=0
     private var _attempts=0
     val attempts
@@ -30,11 +29,11 @@ class GAN(var maxAttempts : Int) {
 
     fun check(guess: Int) : Answer{
         _attempts+=1
-        if(guess==toGuess)
+        if(guess == toGuess)
             return Answer.YOUWIN
-        if(_attempts>=maxAttempts)
+        if(_attempts >= maxAttempts)
             return Answer.YOULOOSE
-        if(guess>toGuess)
+        if(guess > toGuess)
             return Answer.TOOBIG
         return Answer.TOOSMALL
     }

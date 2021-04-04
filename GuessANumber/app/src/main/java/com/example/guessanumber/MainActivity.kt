@@ -1,5 +1,6 @@
 package com.example.guessanumber
 
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,14 +9,17 @@ import android.widget.Toast
 import androidx.core.net.toUri
 import com.example.guessanumber.databinding.ActivityMainBinding
 
-
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var maxValue = 100
+    private var res  = resources
+
     companion object{
-        const val MAXATTEMPTS=10
+        var MAXATTEMPTS = 20
     }
-    var gan= GAN(MAXATTEMPTS)
+
+    var gan = GAN(MAXATTEMPTS, maxValue)
+    var gameStarted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             }
             mybinding.btnCanc.setOnClickListener(ActionClick())
             mybinding.btnOK.setOnClickListener(ActionClick())
+            mybinding.swLevel?.setOnClickListener(ActionClick())
             mybinding.ivState.setOnClickListener{
                 startGame()
             }
@@ -76,9 +81,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         private fun startGame(){
-            gan=GAN(MAXATTEMPTS)
+            gan = GAN(MAXATTEMPTS, maxValue)
             mybinding.tvGAN.text=""
             mybinding.tvAttempts.text=""
+            gameStarted = true
             gan.new()
             mybinding.ivState.setImageResource(R.drawable.wait)
             enableButtons()
@@ -88,16 +94,18 @@ class MainActivity : AppCompatActivity() {
             val answer = gan.check(mybinding.tvGAN.text.toString().toInt())
             state = when(answer){
                 GAN.Answer.YOULOOSE->{gan.new()
+                gameStarted = false
                 R.drawable.you_loose
                 }
                 GAN.Answer.YOUWIN->{gan.new()
+                gameStarted = false
                 R.drawable.you_win
                 }
                 GAN.Answer.TOOSMALL->R.drawable.too_small
                 GAN.Answer.TOOBIG->R.drawable.too_big
             }
             mybinding.ivState.setImageResource(state)
-            mybinding.ivState.tag=("android.resource://com.example.guessanumber/"+state)
+            mybinding.ivState.tag=("android.resource://com.example.guessanumber/$state")
             return answer
         }
 
@@ -106,9 +114,9 @@ class MainActivity : AppCompatActivity() {
                 view as Button
                 val txt = mybinding.tvGAN.text.toString() + view.text.toString()
                 mybinding.tvGAN.text = txt
-                if(txt.toInt() !in 1..100){
+                if(txt.toInt() !in 1..maxValue){
                     mybinding.btnOK.isEnabled = false
-                    Toast.makeText(this@MainActivity, "The number must be between 1 and 100", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity,"The number must be between 1 and $maxValue", Toast.LENGTH_SHORT).show()
                 }else{
                     mybinding.btnOK.isEnabled = true
                 }
@@ -121,18 +129,33 @@ class MainActivity : AppCompatActivity() {
                 when(view.id){
                     R.id.btnCanc -> {mybinding.tvGAN.text = mybinding.tvGAN.text.toString().dropLast(1)
                                     mybinding.btnOK.isEnabled = mybinding.tvGAN.text.toString()!=""}
-                    R.id.btnOK -> {when(check()) {
-                        GAN.Answer.TOOBIG, GAN.Answer.TOOSMALL -> mybinding.tvAttempts.text = gan.attempts.toString()
-                        GAN.Answer.YOUWIN, GAN.Answer.YOULOOSE -> {
-                            disableButtons()
-                            Toast.makeText(this@MainActivity, "Tap face to restart!", Toast.LENGTH_LONG).show()
+                    R.id.btnOK -> {
+                        when (check()) {
+                            GAN.Answer.TOOBIG, GAN.Answer.TOOSMALL -> mybinding.tvAttempts.text =
+                                gan.attempts.toString()
+                            GAN.Answer.YOUWIN, GAN.Answer.YOULOOSE -> {
+                                disableButtons()
+                                Toast.makeText(this@MainActivity,"Tap face to restart!",Toast.LENGTH_LONG).show()
+                            }
                         }
                     }
-                    mybinding.tvGAN.text=""
-                    mybinding.btnOK.isEnabled = false
-
+                    R.id.swLevel -> {
+                        if(gameStarted)
+                            mybinding.swLevel?.showText = false
+                        else {
+                            mybinding.swLevel?.showText = true
+                            if (mybinding.swLevel?.isChecked == true) {
+                                mybinding.tvAttempts.text = res.getString(R.string._normalChecked)
+                                MAXATTEMPTS = 20
+                            } else {
+                                mybinding.tvAttempts.text = res.getString(R.string._hardChecked)
+                                MAXATTEMPTS = 10
+                            }
+                        }
                     }
                 }
+                mybinding.tvGAN.text = ""
+                mybinding.btnOK.isEnabled = false
             }
         }
     }
