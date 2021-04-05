@@ -19,16 +19,19 @@ class ThirdActivity : AppCompatActivity() {
 
         binding.btnEasy.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
+            intent.putExtra("mode", 10)
             startActivity(intent)
         }
 
         binding.btnMedium.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
+            intent.putExtra("mode", 7)
             startActivity(intent)
         }
 
         binding.btnDifficult.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
+            intent.putExtra("mode", 5)
             startActivity(intent)
         }
 
