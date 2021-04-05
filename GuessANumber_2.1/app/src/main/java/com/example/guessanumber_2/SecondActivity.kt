@@ -19,8 +19,6 @@ class SecondActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = ""
 
-
-
         imgBtnSecondActivity.setOnClickListener {
             val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)

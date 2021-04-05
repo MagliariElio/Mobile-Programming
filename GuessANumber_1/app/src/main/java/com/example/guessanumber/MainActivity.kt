@@ -55,12 +55,14 @@ class MainActivity : AppCompatActivity() {
             mybinding.btnCanc.setOnClickListener(ActionClick())
             mybinding.btnOK.setOnClickListener(ActionClick())
             mybinding.swLevel?.setOnCheckedChangeListener { _, isChecked->
-                if(isChecked){
-                    mybinding.tvAttempts.setText(R.string._normalChecked)//res.getString(R.string._normalChecked)
-                    MAXATTEMPTS = 20
-                }else{
-                    mybinding.tvAttempts.setText(R.string._hardChecked)
-                    MAXATTEMPTS = 10
+                if (!gameStarted) {
+                    if (isChecked) {
+                        mybinding.tvAttempts.setText(R.string._normalChecked)//res.getString(R.string._normalChecked)
+                        MAXATTEMPTS = 20
+                    } else {
+                        mybinding.tvAttempts.setText(R.string._hardChecked)
+                        MAXATTEMPTS = 10
+                    }
                 }
             }
             mybinding.ivState.setOnClickListener{

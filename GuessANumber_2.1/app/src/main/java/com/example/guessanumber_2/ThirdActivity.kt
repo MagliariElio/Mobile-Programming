@@ -33,7 +33,9 @@ class ThirdActivity : AppCompatActivity() {
         }
 
         val actionBar = supportActionBar
-        actionBar!!.title = "Game modes"
+        //actionBar!!.title = "Game modes"
+
+        actionBar!!.title = getText(R.string.game_modes_title)
 
         actionBar.setDisplayHomeAsUpEnabled(true)
 

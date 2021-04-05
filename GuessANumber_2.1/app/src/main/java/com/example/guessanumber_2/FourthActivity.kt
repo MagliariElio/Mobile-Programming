@@ -10,8 +10,8 @@ import com.example.guessanumber_2.databinding.ActivityThirdBinding
 
 class FourthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding
-    //private var res  = resources
     private var maxAttempts = 10 // easy 10, medium 7, difficult 5
+    var textToast = ""
 
     private companion object{
         var maxValue = 100
@@ -63,7 +63,8 @@ class FourthActivity : AppCompatActivity() {
             }
             if(bool) {
                 disableButtons()
-                Toast.makeText(this@FourthActivity, "Tap face to start game", Toast.LENGTH_LONG).show()
+                textToast = getText(R.string.tap_face_start_toast) as String
+                Toast.makeText(this@FourthActivity, textToast, Toast.LENGTH_LONG).show()
             }
         }
 
@@ -105,12 +106,14 @@ class FourthActivity : AppCompatActivity() {
                     R.drawable.you_win
                 }
                 GAN.Answer.TOOSMALL-> {
-                    Toast.makeText(this@FourthActivity,"Too Loow", Toast.LENGTH_SHORT).show()
+                    textToast = getText(R.string.too_low) as String
+                    Toast.makeText(this@FourthActivity, textToast, Toast.LENGTH_SHORT).show()
                     R.drawable.wrong
                 }
 
                 GAN.Answer.TOOBIG-> {
-                    Toast.makeText(this@FourthActivity,"Too High", Toast.LENGTH_SHORT).show()
+                    textToast = getText(R.string.too_high) as String
+                    Toast.makeText(this@FourthActivity,textToast, Toast.LENGTH_SHORT).show()
                     R.drawable.wrong
                 }
             }
@@ -126,7 +129,8 @@ class FourthActivity : AppCompatActivity() {
                 mybinding.tvGAN.text = txt
                 if(txt.toInt() !in 1..maxValue){
                     mybinding.btnOK.isEnabled = false
-                    Toast.makeText(this@FourthActivity, "The number must be between 1 and $maxValue", Toast.LENGTH_SHORT).show()
+                    textToast = getText(R.string.number_advice) as String + maxValue.toString()
+                    Toast.makeText(this@FourthActivity, textToast, Toast.LENGTH_SHORT).show()
                 }else{
                     mybinding.btnOK.isEnabled = true
                 }
@@ -143,7 +147,8 @@ class FourthActivity : AppCompatActivity() {
                         GAN.Answer.TOOBIG, GAN.Answer.TOOSMALL -> mybinding.tvAttempts.text = gan.attempts.toString()
                         GAN.Answer.YOUWIN, GAN.Answer.YOULOOSE -> {
                             disableButtons()
-                            Toast.makeText(this@FourthActivity,"Tap face to restart!",Toast.LENGTH_LONG).show()
+                            textToast = getText(R.string.tap_face_restart_toast) as String
+                            Toast.makeText(this@FourthActivity,textToast,Toast.LENGTH_LONG).show()
                         }
                     }
                         mybinding.tvGAN.text=""
