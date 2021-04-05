@@ -17,7 +17,7 @@ class FourthActivity : AppCompatActivity() {
         var maxValue = 100
     }
 
-    var gan = GAN(maxAttempts, maxValue)
+    lateinit var gan: GAN
     var gameStarted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +30,9 @@ class FourthActivity : AppCompatActivity() {
 
         actionBar.setDisplayHomeAsUpEnabled(true)
 
+        maxAttempts=intent.getIntExtra("mode", 10)
+        gan=GAN(maxAttempts, maxValue)
+        
         var bool=true
         if (savedInstanceState != null){
             bool = savedInstanceState.getBoolean("value")
