@@ -24,4 +24,8 @@
     <string name="tap_face_restart_toast">Tap face to restart!</string>
     <string name="tap_face_start_toast">Tap face to start game</string>
     <string name="number_advice">The number must be between 1 and</string>
+    <string name="easy_mode">Easy mode: 10 attempts!</string>
+    <string name="medium_mode">Medium mode: 7 attempts!</string>
+    <string name="difficult_mode">Difficult mode: 5 attempts!</string>
+    <string name="first_phrase_game">Hello! Click on me to start the game.</string>
 </resources>

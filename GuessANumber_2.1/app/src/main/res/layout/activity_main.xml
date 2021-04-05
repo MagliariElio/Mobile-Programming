@@ -11,11 +11,12 @@
         android:id="@+id/ib_Hello"
         android:layout_width="300dp"
         android:layout_height="230dp"
-        android:layout_marginTop="@dimen/top_ib_space"
+        android:layout_marginTop="168dp"
         android:background="@null"
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hello" />
@@ -24,16 +25,16 @@
         android:id="@+id/tv_Hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_tv_space"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/fredoka_one"
-        android:text="Hello! Click on me to start the game."
+        android:text="@string/first_phrase_game"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="@id/ib_Hello"
         app:layout_constraintRight_toRightOf="@id/ib_Hello"
-        app:layout_constraintTop_toBottomOf="@+id/ib_Hello"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_Hello" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

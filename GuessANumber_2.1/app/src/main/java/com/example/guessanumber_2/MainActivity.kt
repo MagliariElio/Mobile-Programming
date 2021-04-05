@@ -28,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         fishAnimation = AnimationUtils.loadAnimation(this, R.anim.fish_animation)
         titleAnimation = AnimationUtils.loadAnimation(this, R.anim.title_anim)
         msgAnimation = AnimationUtils.loadAnimation(this, R.anim.msg_anim)
-        binding.imageView.animation = fishAnimation
-        binding.tvTitle.animation = titleAnimation
-        binding.tvHi.animation = msgAnimation
-        binding.textView3.animation = msgAnimation
+        binding.imageView?.animation = fishAnimation
+        binding.tvTitle?.animation = titleAnimation
+        binding.tvHi?.animation = msgAnimation
+        binding.textView3?.animation = msgAnimation
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,

@@ -7,18 +7,19 @@
     android:background="@drawable/gradient_background"
     tools:context=".SecondActivity">
 
+
     <ImageView
         android:id="@+id/ivState"
         android:layout_width="263dp"
         android:layout_height="281dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wait" />
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clNumPad"
@@ -26,9 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/min_space"
         android:layout_marginEnd="@dimen/min_space"
-        android:layout_marginBottom="@dimen/bottom_space"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -145,10 +147,13 @@
         android:id="@+id/tvGAN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/clNumPad"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
