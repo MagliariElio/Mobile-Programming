@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_medium">MEDIO</string>
+    <string name="btn_easy">FACILE</string>
+    <string name="btn_difficult">DIFFICILE</string>
+    <string name="canc">canc</string>
+    <string name="hi">Ciao!</string>
+    <string name="too_low">Troppo  basso</string>
+    <string name="too_high">Troppo alto</string>
+    <string name="game_modes_title">Livello del gioco</string>
+    <string name="tap_face_restart_toast">Tocca sull\'imagine per riniziare</string>
+    <string name="tap_face_start_toast">Tocca sull\'immagine per iniziare il gioco</string>
+    <string name="number_advice">"Il numero deve essere tra 1 e "</string>
+</resources>
