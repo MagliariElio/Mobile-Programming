@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">GUESS THE NUMBER</string>
+    <string name="app_name" translatable="false">Guess The Number</string>
     <string name="btn_medium">MEDIUM</string>
     <string name="btn_easy">EASY</string>
     <string name="btn_difficult">DIFFICULT</string>
@@ -15,7 +15,7 @@
     <string name="_3" translatable="false">3</string>
     <string name="_2" translatable="false">2</string>
     <string name="_1" translatable="false">1</string>
-    <string name="guess_a_number" translatable="false">GUESS THE NUMBER</string>
+    <string name="guess_a_number" translatable="false">Guess The Number</string>
     <string name="hi">Hi!</string>
     <string name="msg" translatable="false">\\</string>
     <string name="too_low">Too Low</string>
