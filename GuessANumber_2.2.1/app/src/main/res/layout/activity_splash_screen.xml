@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_Hello"
+        android:layout_width="195dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="@dimen/fish_splash_space"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/hello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_Title"
+        android:layout_width="286dp"
+        android:layout_height="251dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Hello"
+        app:srcCompat="@drawable/guessthenumber"
+        tools:ignore="ContentDescription" />
+
+
+    <ImageView
+        android:id="@+id/iv_Greet"
+        android:layout_width="65dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/hi_splash_space"
+        android:contentDescription="@string/hi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hi" />
+
+    <ImageView
+        android:id="@+id/iv_Bubble1"
+        android:layout_width="48dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="@dimen/top_bubble1_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bubble"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_Bubble2"
+        android:layout_width="38dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/top_bubble2_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bubble"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_Bubble3"
+        android:layout_width="32dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/top_bubble3_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bubble"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
