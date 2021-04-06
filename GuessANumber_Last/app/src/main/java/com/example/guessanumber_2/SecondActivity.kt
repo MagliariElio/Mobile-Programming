@@ -14,12 +14,11 @@ class SecondActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val imgBtnSecondActivity = findViewById<ImageButton>(R.id.ib_Hello)
 
         val actionBar = supportActionBar
         actionBar!!.title = ""
 
-        imgBtnSecondActivity.setOnClickListener {
+        binding.ibHello.setOnClickListener {
             val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
         }
