@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_easy">FACILE</string>
+    <string name="btn_difficult">DIFFICILE</string>
+    <string name="btn_medium">MOYEN</string>
+    <string name="canc">effac</string>
+    <string name="hi">Salut!</string>
+    <string name="too_low">"Trop court "</string>
+    <string name="too_high">Trop haut</string>
+    <string name="game_modes_title">Modes de jeu</string>
+    <string name="tap_face_restart_toast">Appuyez sur l\'image pour redémarrer</string>
+    <string name="tap_face_start_toast">Appuyez sur l\'image pour démarrer le jeu</string>
+    <string name="number_advice">Le nombre doit être compris entre 1 et</string>
+    <string name="easy_mode">Mode facile: 10 tentatives!</string>
+    <string name="medium_mode">Mode moyen: 7 tentatives!</string>
+    <string name="difficult_mode">Mode difficile: 5 tentatives!</string>
+    <string name="first_phrase_game">Salut! Cliquez sur moi pour démarrer le jeu.</string>
+</resources>
