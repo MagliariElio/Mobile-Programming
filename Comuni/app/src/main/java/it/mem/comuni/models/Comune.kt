@@ -1,5 +1,6 @@
 package it.mem.comuni.models
 
+@Suppress("SpellCheckingInspection")
 data class Comune (var istat:String="", var comune: String ="",
                    var provincia: String="", var regione: String="",
                    var prefisso: String="", var cap: String="",

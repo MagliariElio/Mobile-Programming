@@ -1,6 +1,8 @@
 package it.mem.comuni.models
 
-class ListaComuni() {
+@Suppress("SpellCheckingInspection")
+
+class ListaComuni {
     var listaComuni: MutableList<Comune> = mutableListOf()
 
     fun add(c: Comune) {

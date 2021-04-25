@@ -1,21 +1,29 @@
 package it.mem.comuni.adapters
 
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.view.LayoutInflater
 import android.widget.Filter
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import it.mem.comuni.databinding.LeftBinding
 import it.mem.comuni.models.Comune
 import it.mem.comuni.models.ListaComuni
 import java.util.*
 
-class AdapterComuni(placesList: ListaComuni):
+@Suppress("SpellCheckingInspection")
+class AdapterComuni(contesto:Context,placesList: ListaComuni):
     RecyclerView.Adapter<AdapterComuni.ViewHolder>() {
     private var allPlacesList = ListaComuni()
     private var filteredPlacesList = ListaComuni()
+    private lateinit var binding: LeftBinding
+    private var context=contesto
+
 
     init {
         allPlacesList =placesList
@@ -25,8 +33,8 @@ class AdapterComuni(placesList: ListaComuni):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
 
-        val binding = LeftBinding.inflate(layoutInflater, parent, false)
-        return ViewHolder(binding)
+        binding = LeftBinding.inflate(layoutInflater, parent, false)
+        return ViewHolder(context, binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -38,7 +46,7 @@ class AdapterComuni(placesList: ListaComuni):
         holder.comune = filteredPlacesList[position]
 
 
-
+        
 
     }
 
@@ -73,9 +81,11 @@ class AdapterComuni(placesList: ListaComuni):
                 return filterResults
             }
         }
+
     }
 
-    class ViewHolder(binding: LeftBinding):RecyclerView.ViewHolder(binding.root){
+    class ViewHolder(context: Context, binding: LeftBinding):RecyclerView.ViewHolder(binding.root){
+        private val contesto = context
         var comune: Comune = Comune()
             set(value) {
                 field =value
@@ -85,14 +95,21 @@ class AdapterComuni(placesList: ListaComuni):
                     value.provincia.toUpperCase(Locale.getDefault()))
                 tvCap.text=value.cap
 
-
+                tvLink.setOnClickListener {
+                    val url=tvLink.text.toString()
+                    val intent=Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse(url)
+                    startActivity(contesto, intent, null)
+                }
 
             }
+
 
         private var tvComune: TextView = binding.tvComune
         private var tvLink: TextView = binding.tvLink
         private var tvProvincia: TextView = binding.tvProvincia
         private var tvCap: TextView = binding.tvCap
+
 
     }
 

@@ -31,10 +31,12 @@ class MainActivity : AppCompatActivity() {
 
         loadData()
         setUIController()
+
     }
 
     private fun setUIController() {
         val searchView=binding.searchBar
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 adapter.getFilter().filter(query)
@@ -49,6 +51,9 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         })
+
+
+
     }
 
     private fun loadData() {
@@ -63,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 launch(Dispatchers.Default) {
                     listaComuni.listaComuni.sortBy { it.comune }
                     launch(Dispatchers.Main) {
-                        adapter = AdapterComuni(listaComuni)
+                        adapter = AdapterComuni(this@MainActivity,listaComuni)
                         val layoutManager = LinearLayoutManager(this@MainActivity)
                         binding.rvComuni.layoutManager = layoutManager
                         binding.rvComuni.adapter = adapter
@@ -73,4 +78,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
