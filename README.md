@@ -1,2 +1,2 @@
 # Mobile-Programming
-MP a.y. 2020/2021
+MP projects a.y. 2020/2021
