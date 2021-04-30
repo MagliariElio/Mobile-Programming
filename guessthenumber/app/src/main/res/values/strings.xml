@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name" translatable="false">Guess The Number</string>
+    <string name="btn_medium">MEDIUM</string>
+    <string name="btn_easy">EASY</string>
+    <string name="btn_difficult">DIFFICULT</string>
+    <string name="btn_1" translatable="false">1</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="_9" translatable="false">9</string>
+    <string name="_8" translatable="false">8</string>
+    <string name="_7" translatable="false">7</string>
+    <string name="_6" translatable="false">6</string>
+    <string name="_5" translatable="false">5</string>
+    <string name="_4" translatable="false">4</string>
+    <string name="canc">canc</string>
+    <string name="_3" translatable="false">3</string>
+    <string name="_2" translatable="false">2</string>
+    <string name="_1" translatable="false">1</string>
+    <string name="guess_a_number" translatable="false">Guess The Number</string>
+    <string name="hi">Hi!</string>
+    <string name="msg" translatable="false">\\</string>
+    <string name="too_low">Too Low</string>
+    <string name="too_high">Too High</string>
+    <string name="game_modes_title">Game modes</string>
+    <string name="tap_face_restart_toast">Tap face to restart!</string>
+    <string name="tap_face_start_toast">Tap face to start game</string>
+    <string name="number_advice">The number must be between 1 and</string>
+    <string name="easy_mode">Easy mode: 10 attempts!</string>
+    <string name="medium_mode">Medium mode: 7 attempts!</string>
+    <string name="difficult_mode">Difficult mode: 5 attempts!</string>
+    <string name="first_phrase_game">Hello! Click on me to start game.</string>
+    <string name="wait" translatable="false">\\</string>
+</resources>
