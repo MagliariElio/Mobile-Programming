@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-it-rIT\\values-it-rIT.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\src\\main\\res\\values-it-rIT\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5,15,13,16,9,6,14,12,10,11,8,7",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "148,103,57,201,841,701,918,378,240,771,625,443,532,328,278",
+                        "endColumns": "51,43,44,37,75,68,77,63,36,68,74,87,91,48,48",
+                        "endOffsets": "195,142,97,234,912,765,991,437,272,835,695,526,619,372,322"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,151,196,234,310,379,457,521,558,627,702,790,882,931",
+                        "endColumns": "51,43,44,37,75,68,77,63,36,68,74,87,91,48,48",
+                        "endOffsets": "102,146,191,229,305,374,452,516,553,622,697,785,877,926,975"
+                    }
+                }
+            ]
+        }
+    ]
+}

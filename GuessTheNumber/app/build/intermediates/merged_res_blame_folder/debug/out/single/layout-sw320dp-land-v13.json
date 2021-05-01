@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout-sw320dp-land-v13\\activity_second.xml",
+        "source": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\src\\main\\res\\layout-sw320dp-land\\activity_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout-sw320dp-land-v13\\activity_main.xml",
+        "source": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\src\\main\\res\\layout-sw320dp-land\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout-sw320dp-land-v13\\activity_third.xml",
+        "source": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\src\\main\\res\\layout-sw320dp-land\\activity_third.xml"
+    },
+    {
+        "merged": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout-sw320dp-land-v13\\activity_splash_screen.xml",
+        "source": "C:\\Users\\franc\\Downloads\\Downloading Mobile-Programming-GuessTheNumber\\GuessTheNumber\\app\\src\\main\\res\\layout-sw320dp-land\\activity_splash_screen.xml"
+    }
+]
