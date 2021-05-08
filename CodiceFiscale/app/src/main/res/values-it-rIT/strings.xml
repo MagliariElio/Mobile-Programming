@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Codice Fiscale</string>
-    <string name="birthdate_dd_mm_yyyy">Data di nascita</string>
-    <string name="last_name">Cognome</string>
-    <string name="first_name">Nome</string>
-    <string name="birth_country">Luogo di nascita</string>
-</resources>
