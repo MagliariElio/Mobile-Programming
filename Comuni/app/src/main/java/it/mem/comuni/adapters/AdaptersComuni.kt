@@ -94,6 +94,8 @@ class AdapterComuni(contesto:Context,placesList: ListaComuni):
                 tvProvincia.text = String.format("(%s)",
                     value.provincia.toUpperCase(Locale.getDefault()))
                 tvCap.text=value.cap
+                tvAbitanti.text=value.abitanti
+                tvPrefisso.text=value.prefisso
 
                 tvLink.setOnClickListener {
                     val url=tvLink.text.toString()
@@ -109,6 +111,8 @@ class AdapterComuni(contesto:Context,placesList: ListaComuni):
         private var tvLink: TextView = binding.tvLink
         private var tvProvincia: TextView = binding.tvProvincia
         private var tvCap: TextView = binding.tvCap
+        private var tvAbitanti: TextView = binding.tvAbitanti
+        private var tvPrefisso: TextView = binding.tvPrefisso
 
 
     }
