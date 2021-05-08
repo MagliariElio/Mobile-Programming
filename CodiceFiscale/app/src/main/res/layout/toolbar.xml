@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="@dimen/med_space">
 
         <ImageView
             android:id="@+id/left_icon"
@@ -23,8 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/med_space"
+            android:layout_marginEnd="@dimen/med_space"
             android:layout_toEndOf="@id/left_icon"
             android:text="@string/title"
             android:textStyle="bold"
