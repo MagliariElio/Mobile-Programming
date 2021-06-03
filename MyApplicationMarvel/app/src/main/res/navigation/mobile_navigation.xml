@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_characters" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="it.mem.myapplicationmarvel.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_comics"
+        android:name="it.mem.myapplicationmarvel.ui.comics.ComicsFragment"
+        android:label="@string/menu_comics"
+        tools:layout="@layout/fragment_comics" />
 
     <fragment
         android:id="@+id/nav_slideshow"

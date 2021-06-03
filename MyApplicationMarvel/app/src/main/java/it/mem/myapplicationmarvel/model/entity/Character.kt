@@ -12,5 +12,5 @@ data class Character (
     @SerializedName("comics") val comics: Comics,
     @SerializedName("series") val series: Series,
     @SerializedName("stories") val stories: Stories,
-    @SerializedName("events") val events: Events,
+    @SerializedName("events") val events: Events
 )

@@ -1,8 +1,6 @@
-package it.mem.myapplicationmarvel.model.paging
+package it.mem.myapplicationmarvel.model.paging.characters
 
-import android.view.accessibility.AccessibilityRequestPreparer
 import androidx.paging.DataSource
-import androidx.paging.PageKeyedDataSource
 import io.reactivex.disposables.CompositeDisposable
 import it.mem.myapplicationmarvel.model.api.MarvelAPI
 import it.mem.myapplicationmarvel.model.entity.Character

@@ -3,7 +3,8 @@ package it.mem.myapplicationmarvel.model.api
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
 import it.mem.myapplicationmarvel.extensions.md5
-import it.mem.myapplicationmarvel.model.entity.Response
+import it.mem.myapplicationmarvel.model.entity.charactersdate.ResponseCharacters
+import it.mem.myapplicationmarvel.model.entity.comicsdate.ResponseComics
 import it.mem.myapplicationmarvel.utils.API_KEY
 import it.mem.myapplicationmarvel.utils.BASE_URL
 import okhttp3.OkHttpClient
@@ -18,8 +19,14 @@ import java.util.*
 
 interface MarvelAPI {
     @GET("characters")
-    fun allCharacters(@Query("offset") offset:Int?=0):Observable<Response>
+    fun allCharacters(@Query("offset") offset:Int?=0):Observable<ResponseCharacters>
 
+    @GET("characters")
+    fun searchCharacters(@Query("nameStartsWith") nameStartsWith:String?="",@Query("offset") offset:Int?=0):Observable<ResponseCharacters>
+
+
+    @GET("comics")
+    fun allComics(@Query("offset") offset: Int?=0):Observable<ResponseComics>
 
     companion object {
         fun getService(): MarvelAPI {

@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,7 +34,22 @@ class CharacterFragment:Fragment() {
         val llm = LinearLayoutManager(activity)
         binding.recyclerCharacters.layoutManager = llm
         binding.recyclerCharacters.adapter = adapter
-        subscribeToList()
+        subscribeToList("")
+
+        val searchView=binding.searchBar
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                Log.v("NGVL", "Query")
+                subscribeToList(query)
+                return false
+            }
+            override fun onQueryTextChange(newText: String): Boolean {
+
+                subscribeToList(newText)
+                return false
+            }
+        })
 
         return binding.root
     }
@@ -48,11 +65,12 @@ class CharacterFragment:Fragment() {
     }
 
     @SuppressLint("CheckResult")
-    private fun subscribeToList() {
-        viewModel.characterList
+    private fun subscribeToList(name:String) {
+        viewModel.getList(name)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { list ->
+                    Log.v("NGVL", "Entrat0")
                     adapter.submitList(list)
                     if (recyclerState != null) {
                         binding.recyclerCharacters.layoutManager?.onRestoreInstanceState(recyclerState)
