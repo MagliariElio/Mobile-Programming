@@ -30,8 +30,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="TODO"
-        android:tint="@color/white"
         app:backgroundTint="#BA1A1A"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@drawable/ic_baseline_star_24" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

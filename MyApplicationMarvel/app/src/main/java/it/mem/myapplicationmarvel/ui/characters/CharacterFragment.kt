@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import it.mem.myapplicationmarvel.databinding.FragmentCharactersBinding
 
-class CharacterFragment:Fragment() {
+class CharacterFragment:Fragment(){
     private lateinit var binding: FragmentCharactersBinding
     private val viewModel: CharactersViewModel by lazy {
         ViewModelProvider(this).get(CharactersViewModel::class.java)
@@ -35,6 +35,10 @@ class CharacterFragment:Fragment() {
         binding.recyclerCharacters.layoutManager = llm
         binding.recyclerCharacters.adapter = adapter
         subscribeToList("")
+
+        adapter.onItemClick={
+            Log.v("Marvel", it.id.toString())
+        }
 
         val searchView=binding.searchBar
 
@@ -82,5 +86,7 @@ class CharacterFragment:Fragment() {
                 }
             )
     }
+
+
 }
 

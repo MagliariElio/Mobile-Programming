@@ -15,15 +15,18 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import it.mem.myapplicationmarvel.utils.PRIVATE_KEY
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Path
 import java.util.*
 
 interface MarvelAPI {
     @GET("characters")
-    fun allCharacters(@Query("offset") offset:Int?=0):Observable<ResponseCharacters>
+    fun allCharacters(@Query("offset") offset:Int?=0, @Query("orderBy") orderBy:String="-modified"):Observable<ResponseCharacters>
 
     @GET("characters")
     fun searchCharacters(@Query("nameStartsWith") nameStartsWith:String?="",@Query("offset") offset:Int?=0):Observable<ResponseCharacters>
 
+    @GET("characters/{characterId}")
+    fun searchCaracterById(@Path("characterId") characterId:Int)
 
     @GET("comics")
     fun allComics(@Query("offset") offset: Int?=0):Observable<ResponseComics>
