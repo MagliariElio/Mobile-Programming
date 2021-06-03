@@ -26,7 +26,7 @@ interface MarvelAPI {
     fun searchCharacters(@Query("nameStartsWith") nameStartsWith:String?="",@Query("offset") offset:Int?=0):Observable<ResponseCharacters>
 
     @GET("characters/{characterId}")
-    fun searchCaracterById(@Path("characterId") characterId:Int)
+    suspend fun searchCaracterById(@Path("characterId") characterId:Int):ResponseCharacters
 
     @GET("comics")
     fun allComics(@Query("offset") offset: Int?=0):Observable<ResponseComics>

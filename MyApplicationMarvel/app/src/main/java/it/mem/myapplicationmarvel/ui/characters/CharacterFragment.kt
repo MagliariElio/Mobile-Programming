@@ -1,6 +1,7 @@
 package it.mem.myapplicationmarvel.ui.characters
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
@@ -8,11 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.reactivex.android.schedulers.AndroidSchedulers
+import it.mem.myapplicationmarvel.activities.CharacterDetailsActivity
 import it.mem.myapplicationmarvel.databinding.FragmentCharactersBinding
 
 class CharacterFragment:Fragment(){
@@ -38,6 +39,10 @@ class CharacterFragment:Fragment(){
 
         adapter.onItemClick={
             Log.v("Marvel", it.id.toString())
+
+            val intent= Intent(activity,CharacterDetailsActivity::class.java)
+            intent.putExtra("characterId", it.id)
+            activity?.startActivity(intent)
         }
 
         val searchView=binding.searchBar

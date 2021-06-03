@@ -32,7 +32,7 @@ class CharactersAdapter() : PagedListAdapter<Character, CharactersAdapter.VH>(ch
         }
 
         holder.txtName.text = character?.name
-        holder.imgThumbnail.load("${character?.thumbnail?.path}.${character?.thumbnail?.extension}")
+        holder.imgThumbnail.load("${character?.thumbnail?.path}/landscape_amazing.${character?.thumbnail?.extension}")
 
     }
 
