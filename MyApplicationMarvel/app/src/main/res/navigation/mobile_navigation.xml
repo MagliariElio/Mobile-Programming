@@ -9,7 +9,11 @@
         android:id="@+id/nav_characters"
         android:name="it.mem.myapplicationmarvel.ui.characters.CharacterFragment"
         android:label="@string/menu_characters"
-        tools:layout="@layout/fragment_characters" />
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_nav_characters_to_favoriteCharacterListFragment"
+            app:destination="@id/favoriteCharacterListFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_comics"
@@ -22,4 +26,13 @@
         android:name="it.mem.myapplicationmarvel.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/favoriteCharacterListFragment"
+        android:name="it.mem.myapplicationmarvel.ui.favorite.FavoriteCharacterListFragment"
+        android:label="Favorite Characters"
+        tools:layout="@layout/favorite_characters_list" >
+        <action
+            android:id="@+id/action_favoriteCharacterListFragment_to_nav_characters"
+            app:destination="@id/nav_characters" />
+    </fragment>
 </navigation>

@@ -7,9 +7,9 @@ import androidx.paging.RxPagedListBuilder
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers.io
-import it.mem.myapplicationmarvel.model.api.MarvelAPI
-import it.mem.myapplicationmarvel.model.entity.Comics
-import it.mem.myapplicationmarvel.model.paging.comics.ComicsDataSourceFactory
+import it.mem.myapplicationmarvel.data.model.api.MarvelAPI
+import it.mem.myapplicationmarvel.data.model.entity.Comics
+import it.mem.myapplicationmarvel.data.model.paging.comics.ComicsDataSourceFactory
 
 class ComicsViewModel :ViewModel(){
     var comicList:Observable<PagedList<Comics>>

@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
 
     <style name="FabTheme" parent="Widget.MaterialComponents.FloatingActionButton">
@@ -26,4 +27,11 @@
     <style name="Theme.Marvel.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Marvel.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="SearchViewStyle" parent="Theme.MaterialComponents.Light.Dialog.MinWidth">
+        <item name="android:editTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+
 </resources>

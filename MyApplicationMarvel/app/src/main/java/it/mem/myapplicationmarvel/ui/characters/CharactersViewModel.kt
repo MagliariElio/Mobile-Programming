@@ -1,22 +1,26 @@
 package it.mem.myapplicationmarvel.ui.characters
 
 
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import androidx.paging.PagedList
 import androidx.paging.RxPagedListBuilder
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers.io
-import it.mem.myapplicationmarvel.model.api.MarvelAPI
-import it.mem.myapplicationmarvel.model.entity.Character
-import it.mem.myapplicationmarvel.model.paging.characters.CharactersDataSourceFactory
-import it.mem.myapplicationmarvel.model.paging.characters.charactersbyname.CharactersDataByNameSourceFactory
+import it.mem.myapplicationmarvel.data.model.api.MarvelAPI
+import it.mem.myapplicationmarvel.data.model.entity.Character
+import it.mem.myapplicationmarvel.data.model.paging.characters.CharactersDataSourceFactory
+import it.mem.myapplicationmarvel.data.model.paging.characters.charactersbyname.CharactersDataByNameSourceFactory
 
-class CharactersViewModel :ViewModel(){
+class CharactersViewModel(application: Application) :AndroidViewModel(application){
     //var characterList:Observable<PagedList<Character>>
 
     private val compositeDisposable = CompositeDisposable()
+
+
+
 
     fun getList(name:String):Observable<PagedList<Character>> {
 
@@ -51,6 +55,8 @@ class CharactersViewModel :ViewModel(){
         super.onCleared()
         compositeDisposable.clear()
     }
+
+
 
 
 }

@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationMarvel">
-        <activity android:name=".activities.CharacterDetailsActivity"
+        <activity android:name="it.mem.myapplicationmarvel.activities.CharacterDetailsActivity"
             android:theme="@style/Theme.MyApplicationMarvel.NoActionBar"/>
         <activity android:name=".MainActivity">
             <intent-filter>

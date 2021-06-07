@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import it.mem.myapplicationmarvel.databinding.ItemComicsBinding
 import it.mem.myapplicationmarvel.extensions.load
-import it.mem.myapplicationmarvel.model.entity.Comics
+import it.mem.myapplicationmarvel.data.model.entity.Comics
 
 class ComicsAdapter() : PagedListAdapter<Comics, ComicsAdapter.VH>(comicDiff) {
 

@@ -9,6 +9,7 @@
     tools:openDrawer="start">
 
     <include
+        android:id="@+id/container"
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -19,6 +20,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:theme="@style/Theme.MyApplicationMarvel"
         app:headerLayout="@layout/nav_header_main"
+        app:itemIconTint="@color/ic_launcher1_background"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

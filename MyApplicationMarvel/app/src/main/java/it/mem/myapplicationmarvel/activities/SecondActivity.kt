@@ -1,6 +1,9 @@
 package it.mem.myapplicationmarvel.activities
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
@@ -13,6 +16,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import it.mem.myapplicationmarvel.R
+import it.mem.myapplicationmarvel.ui.characters.CharacterFragment
+import it.mem.myapplicationmarvel.ui.favorite.FavoriteCharacterListFragment
 
 class SecondActivity : AppCompatActivity() {
 
@@ -24,17 +29,13 @@ class SecondActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-
-        }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.nav_characters, R.id.nav_comics, R.id.nav_slideshow), drawerLayout
+                R.id.nav_characters, R.id.nav_comics, R.id.nav_slideshow, R.id.favoriteCharacterListFragment), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -48,6 +49,7 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
+
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
