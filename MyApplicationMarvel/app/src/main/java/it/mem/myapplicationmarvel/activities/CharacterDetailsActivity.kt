@@ -121,7 +121,7 @@ class CharacterDetailsActivity : AppCompatActivity() {
             binding.txtIdTitle.text = getString(R.string.marvel_Id)
             binding.txtComics.text = getString(R.string.comics)
             binding.txtSeries.text=getString(R.string.series_string)
-            binding.txtStories.text=getString(R.string.stories_string)
+            binding.txtStories.text=getString(R.string.events_string)
             binding.txtUrls.text=getString(R.string.string_urls)
 
 

@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import io.reactivex.Observable
 import it.mem.myapplicationmarvel.data.model.entity.Character
 import it.mem.myapplicationmarvel.data.model.entity.Comics
+import it.mem.myapplicationmarvel.data.model.entity.Events
 import it.mem.myapplicationmarvel.extensions.md5
 import it.mem.myapplicationmarvel.data.model.entity.Response
 import it.mem.myapplicationmarvel.utils.API_KEY
@@ -21,10 +22,10 @@ import java.util.*
 
 interface MarvelAPI {
     @GET("characters")
-    fun allCharacters(@Query("offset") offset:Int?=0, @Query("orderBy") orderBy:String="-modified"):Observable<Response<Character>>
+    fun allCharacters(@Query("offset") offset:Int?=0, @Query("orderBy") orderBy:String="name"):Observable<Response<Character>>
 
     @GET("characters")
-    fun searchCharacters(@Query("nameStartsWith") nameStartsWith:String?="",@Query("offset") offset:Int?=0):Observable<Response<Character>>
+    fun searchCharacters(@Query("nameStartsWith") nameStartsWith:String?="",@Query("offset") offset:Int?=0,  @Query("orderBy") orderBy:String="name"):Observable<Response<Character>>
 
     @GET("characters/{characterId}")
     suspend fun searchCaracterById(@Path("characterId") characterId:Int): Response<Character>
@@ -36,12 +37,14 @@ interface MarvelAPI {
     @GET("characters/{characterId}/series")
     fun characterSeries(@Path("characterId") characterId:Int,@Query("offset") offset: Int?=0):Observable<Response<Comics>>
 
-    @GET("characters/{characterId}/stories")
-    fun characterStories(@Path("characterId") characterId:Int,@Query("offset") offset: Int?=0):Observable<Response<Comics>>
-
+    @GET("characters/{characterId}/events")
+    fun characterEvents(@Path("characterId") characterId:Int,@Query("offset") offset: Int?=0):Observable<Response<Comics>>
 
     @GET("comics")
     fun allComics(@Query("offset") offset: Int?=0):Observable<Response<Comics>>
+
+    @GET("events")
+    fun allEvents(@Query("offset") offset: Int?=0):Observable<Response<Events>>
 
     companion object {
         fun getService(): MarvelAPI {

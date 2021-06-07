@@ -1,29 +1,30 @@
-package it.mem.myapplicationmarvel.data.model.paging.characters
+package it.mem.myapplicationmarvel.data.model.paging.events
 
 import android.util.Log
 import androidx.paging.PageKeyedDataSource
 import io.reactivex.disposables.CompositeDisposable
 import it.mem.myapplicationmarvel.data.model.api.MarvelAPI
-import it.mem.myapplicationmarvel.data.model.entity.Character
+import it.mem.myapplicationmarvel.data.model.entity.Events
 
-class CharactersDataSource(private val marvelAPI: MarvelAPI, private val compositeDisposable: CompositeDisposable, private val order: String):
-    PageKeyedDataSource<Int, Character>() {
+
+class EventsDataSource (private val marvelAPI: MarvelAPI, private val compositeDisposable: CompositeDisposable):
+    PageKeyedDataSource<Int, Events>() {
     override fun loadInitial(
         params: LoadInitialParams<Int>,
-        callback: LoadInitialCallback<Int, Character>
+        callback: LoadInitialCallback<Int, Events>
     ) {
         val numberOfItems=params.requestedLoadSize
         createObservable(0,1,numberOfItems, callback, null)
 
     }
 
-    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Character>) {
+    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Events>) {
         val page=params.key
         val numberOfItems=params.requestedLoadSize
         createObservable(page,page-1,numberOfItems, null, callback)
     }
 
-    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Character>) {
+    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Events>) {
 
         val page=params.key
         val numberOfItems=params.requestedLoadSize
@@ -33,10 +34,10 @@ class CharactersDataSource(private val marvelAPI: MarvelAPI, private val composi
     private fun createObservable(requestedPage:Int,
                               adjacentPage:Int,
                               requestedLoadSize:Int,
-                              initialCallback:LoadInitialCallback<Int,Character>?,
-                              callback: LoadCallback<Int, Character>?){
+                              initialCallback:LoadInitialCallback<Int,Events>?,
+                              callback: LoadCallback<Int, Events>?){
         compositeDisposable.add(
-            marvelAPI.allCharacters(requestedPage*requestedLoadSize, order)
+            marvelAPI.allEvents(requestedPage*requestedLoadSize)
                 .subscribe(
                        {response->
                            Log.d("NGVL", "Loading page: $requestedPage")

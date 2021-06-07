@@ -22,10 +22,10 @@
         tools:layout="@layout/fragment_comics" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="it.mem.myapplicationmarvel.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_events"
+        android:name="it.mem.myapplicationmarvel.ui.events.EventsFragment"
+        android:label="@string/menu_events"
+        tools:layout="@layout/fragment_events" />
     <fragment
         android:id="@+id/favoriteCharacterListFragment"
         android:name="it.mem.myapplicationmarvel.ui.favorite.FavoriteCharacterListFragment"

@@ -13,8 +13,8 @@
             android:icon="@drawable/baseline_auto_stories_black_18"
             android:title="@string/menu_comics" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_events"
+            android:icon="@drawable/baseline_event_black_18"
+            android:title="@string/menu_events" />
     </group>
 </menu>

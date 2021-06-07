@@ -12,12 +12,14 @@
 
     <string name="menu_characters">Characters</string>
     <string name="menu_comics">Comics</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_events">Events</string>
     <string name="marvel_id">Marvel ID</string>
     <string name="marvel_Id">Marvel ID</string>
     <string name="comics">Comics</string>
     <string name="series_string">Series</string>
-    <string name="stories_string">Stories</string>
+    <string name="events_string">Events</string>
     <string name="copyright">Data provided by Marvel. © 2021 MARVEL</string>
     <string name="string_urls">Urls</string>
+    <string name="menu_search">Search</string>
+    <string name="favorite">Favorite</string>
 </resources>

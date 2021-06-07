@@ -4,20 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.characters.CharacterFragment">
+    tools:context=".ui.characters.CharacterFragment"
+    android:background="@color/black">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:progress="99"
-        android:progressDrawable="@drawable/circular_bar"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerCharacters"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recyclerCharacters" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCharacters"
@@ -27,16 +16,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.mancj.materialsearchbar.MaterialSearchBar
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#C4000000"
-        android:forceDarkAllowed="true"
-        android:theme="@style/SearchViewStyle"
+    <TextView
+        android:id="@+id/txt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -45,10 +35,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/favorite"
         app:backgroundTint="#BA1A1A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/star_off" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

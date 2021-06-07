@@ -1,12 +1,13 @@
 package it.mem.myapplicationmarvel.data.model.paging.characters.charactersbyname
 
 import android.util.Log
+import android.widget.Toast
 import androidx.paging.PageKeyedDataSource
 import io.reactivex.disposables.CompositeDisposable
 import it.mem.myapplicationmarvel.data.model.api.MarvelAPI
 import it.mem.myapplicationmarvel.data.model.entity.Character
 
-class CharactersDataByNameSource (private val marvelAPI: MarvelAPI, private val compositeDisposable: CompositeDisposable, private val name:String):
+class CharactersDataByNameSource (private val marvelAPI: MarvelAPI, private val compositeDisposable: CompositeDisposable, private val name:String, private val order:String):
     PageKeyedDataSource<Int, Character>() {
     override fun loadInitial(
         params: LoadInitialParams<Int>,
@@ -36,14 +37,14 @@ class CharactersDataByNameSource (private val marvelAPI: MarvelAPI, private val 
                               initialCallback:LoadInitialCallback<Int,Character>?,
                               callback: LoadCallback<Int, Character>?){
         compositeDisposable.add(
-            marvelAPI.searchCharacters(name,requestedPage*requestedLoadSize)
+            marvelAPI.searchCharacters(name,requestedPage*requestedLoadSize, order)
                 .subscribe(
                        {response->
                            Log.d("NGVL", "Loading page: $requestedPage")
                            initialCallback?.onResult(response.data.results, null, adjacentPage)
                            callback?.onResult(response.data.results, adjacentPage)
                         }, {t->
-                            Log.d("Marvel", "Error loading page: $requestedPage", t)
+                            Log.d("Marvel", "Error loading page: $requestedPage ${t.message}", t)
                         })
         )
     }

@@ -15,23 +15,20 @@ import it.mem.myapplicationmarvel.data.model.paging.characters.CharactersDataSou
 import it.mem.myapplicationmarvel.data.model.paging.characters.charactersbyname.CharactersDataByNameSourceFactory
 
 class CharactersViewModel(application: Application) :AndroidViewModel(application){
-    //var characterList:Observable<PagedList<Character>>
 
     private val compositeDisposable = CompositeDisposable()
 
 
-
-
-    fun getList(name:String):Observable<PagedList<Character>> {
+    fun getList(name:String, order: String="name"):Observable<PagedList<Character>> {
 
 
         val pageSize = 20
 
-        val sourceFactory: CharactersDataSourceFactory = CharactersDataSourceFactory(compositeDisposable, MarvelAPI.getService())
+        val sourceFactory = CharactersDataSourceFactory(compositeDisposable, MarvelAPI.getService(), order)
 
-        val sourceByNameFactory: CharactersDataByNameSourceFactory = CharactersDataByNameSourceFactory(compositeDisposable, MarvelAPI.getService(), name)
+        val sourceByNameFactory = CharactersDataByNameSourceFactory(compositeDisposable, MarvelAPI.getService(), name, order)
 
-        Log.d("Marvel", "$name")
+        Log.d("Marvel", name)
 
         val config = PagedList.Config.Builder()
                 .setPageSize(pageSize)

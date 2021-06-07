@@ -6,12 +6,10 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Parcelable
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.view.inputmethod.EditorInfo
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -32,6 +30,9 @@ class CharacterFragment:Fragment(){
         CharactersAdapter()
     }
 
+    private var order:String="name"
+    private var name:String=""
+
 
 
 
@@ -39,10 +40,13 @@ class CharacterFragment:Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         binding= FragmentCharactersBinding.inflate(layoutInflater, container, false)
 
 
         setUI()
+
+
 
         val fab: FloatingActionButton = binding.fab
         fab.imageTintList= ColorStateList.valueOf((Color.parseColor("#FFFFFF")))
@@ -69,7 +73,7 @@ class CharacterFragment:Fragment(){
         val llm = LinearLayoutManager(activity)
         binding.recyclerCharacters.layoutManager = llm
         binding.recyclerCharacters.adapter = adapter
-        subscribeToList("")
+        subscribeToList("", "name")
         adapter.onItemClick={
             Log.v("Marvel", it.id.toString())
 
@@ -78,34 +82,59 @@ class CharacterFragment:Fragment(){
             activity?.startActivity(intent)
         }
 
-        val searchView=binding.searchBar
 
+    }
 
-        searchView.addTextChangeListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_search, menu)
 
+        val searchItem =menu.findItem(R.id.menu_search)
+        val searchView=searchItem.actionView as SearchView
+
+        searchView.imeOptions=EditorInfo.IME_ACTION_DONE
+
+        searchView.queryHint="Search"
+
+        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                subscribeToList(query.toString(), order)
+                name=query.toString()
+                return true
             }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                subscribeToList(s.toString())
+            override fun onQueryTextChange(newText: String?): Boolean {
+                subscribeToList(newText.toString(), order)
+                name=newText.toString()
+                return true
             }
 
-            override fun afterTextChanged(s: Editable?) {
-                subscribeToList(s.toString())
-            }
         })
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        order= when(item.itemId){
+            R.id.mnu_ordernameascending ->  "name"
+            R.id.mnu_ordernamediscending-> "-name"
+            R.id.mnu_ordermodifiedascending-> "modified"
+            R.id.mnu_ordermodifieddiscending-> "-modified"
+            else -> order
+        }
 
+        subscribeToList(name, order)
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putParcelable("lmState", binding.recyclerCharacters.layoutManager?.onSaveInstanceState())
+        outState.putString("order", order)
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         recyclerState = savedInstanceState?.getParcelable("lmState")
+        order= savedInstanceState?.getString("order").toString()
     }
 
     override fun onResume() {
@@ -114,21 +143,21 @@ class CharacterFragment:Fragment(){
     }
 
     @SuppressLint("CheckResult")
-    private fun subscribeToList(name:String) {
-        viewModel.getList(name)
+    private fun subscribeToList(name:String, order:String= "name") {
+        viewModel.getList(name, order)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { list ->
-                    Log.v("NGVL", "Entrat0")
-                    adapter.submitList(list)
-                    if (recyclerState != null) {
-                        binding.recyclerCharacters.layoutManager?.onRestoreInstanceState(recyclerState)
-                        recyclerState = null
+                    { list ->
+                        Log.v("NGVL", "Entrat0")
+                        adapter.submitList(list)
+                        if (recyclerState != null) {
+                            binding.recyclerCharacters.layoutManager?.onRestoreInstanceState(recyclerState)
+                            recyclerState = null
+                        }
+                    },
+                    { e ->
+                        Log.e("NGVL", "Error", e)
                     }
-                },
-                { e ->
-                    Log.e("NGVL", "Error", e)
-                }
             )
     }
 

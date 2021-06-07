@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers.io
 import it.mem.myapplicationmarvel.data.model.api.MarvelAPI
 import it.mem.myapplicationmarvel.data.model.entity.Comics
-import it.mem.myapplicationmarvel.data.model.paging.characters.infobyid.StoriesByCharactersDataSourceFactory
+import it.mem.myapplicationmarvel.data.model.paging.characters.infobyid.EventsByCharactersDataSourceFactory
 
 class StoriesByCharactersViewModel :ViewModel(){
     //var characterList:Observable<PagedList<Character>>
@@ -22,7 +22,7 @@ class StoriesByCharactersViewModel :ViewModel(){
 
         val pageSize = 20
 
-        val storiesByCharactersFactory = StoriesByCharactersDataSourceFactory(compositeDisposable, MarvelAPI.getService(), id)
+        val storiesByCharactersFactory = EventsByCharactersDataSourceFactory(compositeDisposable, MarvelAPI.getService(), id)
 
         Log.d("Marvel", "$id")
 

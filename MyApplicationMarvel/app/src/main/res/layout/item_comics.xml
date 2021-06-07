@@ -30,11 +30,13 @@
             android:layout_below="@id/imgThumbnail"
             android:layout_marginTop="-38dp"
             android:background="#4e0000"
-            android:maxLines="1"
+            android:maxLines="4"
+            android:lines="2"
             android:padding="8dp"
             android:textColor="@color/white"
             android:textSize="16sp"
-            tools:text="IronMan" />
+            tools:text="IronMan"
+            />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
