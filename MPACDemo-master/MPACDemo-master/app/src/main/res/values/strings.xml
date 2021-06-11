@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name" translatable="false">Chart Creator</string>
+
+    <string name="tv_LineChart_text">Line Chart</string>
+    <string name="tv_BarChart_text">Bar Chart</string>
+    <string name="tv_PieChart_text">Pie Chart</string>
+    <string name="tv_ScatterChart_text">Scatter Chart</string>
+    <string name="tv_CandleStickChart_text">Candle Stick Chart</string>
+    <string name="tv_BubbleChart_text">Bubble Chart</string>
+    <string name="tv_RadarChart_text">Radar Chart</string>
+
+    <string name="btn_text_create_chart">Create new chart</string>
+    <string name="tv_name_line_string">Function name</string>
+    <string name="et_name_line_text">Name</string>
+    <string name="tv_x_axis_string">X Axis values</string>
+    <string name="tv_y_axis_string">Y Axis values</string>
+    <string name="img_description">"Start screen image "</string>
+
+    <string name="x_axis">Ex: 1 2 3 …</string>
+    <string name="y_axis">Ex: 15.3  9.5  7 …</string>
+    <string name="function">Function</string>
+
+    <string name="slice_name">Slice name</string>
+    <string name="slice_value">Slice value</string>
+    <string name="ex_slice_name">Category</string>
+    <string name="ex_slice_value">Ex: 18</string>
+
+
+    <string name="group_name_string">Group name</string>
+    <string name="et_group_string">Group</string>
+    <string name="generate">Generate</string>
+    <string name="bar_name">Bar1 Bar2 …</string>
+    <string name="bar_value">Ex: 22.8  6.3  4.5 …</string>
+
+    <string name="deafult" translatable="false">Default</string>
+    <string name="content_image_chart">ImageChart</string>
+    <string name="chart_type_default_string">Chart Type</string>
+    <string name="toast_text">Data not valid</string>
+
+    <string name="save">Save the chart</string>
+    <string name="toast_no_permission">The application does not have permissions to save the chart</string>
+    <string name="toast_saved">Your chart has been saved. The photo is in the phone gallery</string>
+    <string name="et_name_scatter_text">Name</string>
+    <string name="tv_name_scatter_string">Function Name</string>
+    <string name="tv_size">Size</string>
+    <string name="tv_name_bubble_string">Function Name</string>
+    <string name="tv_shadow_low">Shadow Low Value</string>
+    <string name="tv_shadow_high">Shadow High Value</string>
+    <string name="tv_open">Open Value</string>
+    <string name="tv_close">Close Value</string>
+</resources>

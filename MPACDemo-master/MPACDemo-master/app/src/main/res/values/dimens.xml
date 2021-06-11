@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="et_ts">18sp</dimen>
+    <dimen name="tv_ts">14sp</dimen>
+    <dimen name="widthfunction">209dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="legend">5dp</dimen>
+    <dimen name="legend_text">5dp</dimen>
+    <dimen name="height">40dp</dimen>
+    <dimen name="button_h">8dp</dimen>
+    <dimen name="button_w">24dp</dimen>
+    <dimen name="tvChart_h">160dp</dimen>
+</resources>

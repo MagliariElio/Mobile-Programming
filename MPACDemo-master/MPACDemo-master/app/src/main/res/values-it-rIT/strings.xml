@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_LineChart_text">Grafico lineare</string>
+    <string name="tv_BarChart_text">Grafico a barre</string>
+    <string name="tv_PieChart_text">Grafico a torta</string>
+    <string name="tv_ScatterChart_text">Grafico a dispersione</string>
+    <string name="tv_CandleStickChart_text">Grafico a candela</string>
+    <string name="tv_BubbleChart_text">Grafico a bolle</string>
+    <string name="tv_RadarChart_text">Grafico radar</string>
+
+    <string name="btn_text_create_chart">Crea un nuovo grafico</string>
+    <string name="tv_name_line_string">Nome Funzione</string>
+    <string name="et_name_line_text">Nome</string>
+    <string name="tv_x_axis_string">Valori asse X</string>
+    <string name="tv_y_axis_string">Valori asse Y</string>
+
+    <string name="img_description">Immagine schermo iniziale</string>
+
+    <string name="x_axis">Es: 1 2 3 …</string>
+    <string name="y_axis">Es: 15.3 9.5 7 …</string>
+    <string name="function">Funzione</string>
+
+    <string name="slice_name">Nome spicchio</string>
+    <string name="slice_value">Valore spicchio</string>
+    <string name="ex_slice_name">Categoria</string>
+    <string name="ex_slice_value">Es: 18</string>
+    <string name="group_name_string">Nome Gruppo</string>
+    <string name="et_group_string">Gruppo</string>
+    <string name="generate">Generazione</string>
+    <string name="bar_name">Colonna1 Colonna2 …</string>
+    <string name="bar_value">Es: 22.8 6.3 4.5 …</string>
+
+    <string name="content_image_chart">Immagine grafico</string>
+    <string name="chart_type_default_string">Tipo grafico</string>
+    <string name="toast_text">Dati non validi</string>
+
+    <string name="save">Salva il grafico</string>
+    <string name="toast_no_permission">L\'applicazione non ha i permessi necessari per salvare il grafico</string>
+    <string name="toast_saved">Il tuo grafico è stato salvato. La foto si trova nella tua galleria del telefono</string>
+    <string name="et_name_scatter_text">Nome</string>
+    <string name="tv_name_scatter_string">Nome Funzione</string>
+    <string name="tv_size">Taglia</string>
+    <string name="tv_name_bubble_string">Nome Funzione</string>
+    <string name="tv_shadow_low">Valore Ombra in Basso</string>
+    <string name="tv_shadow_high">Valore Ombra in Alto</string>
+    <string name="tv_open">Valore di Apertura</string>
+    <string name="tv_close">Valore di Chiusura</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="false"
+    android:layout_alignParentBottom="false"
+    app:layout_anchorGravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/ivChart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tvChart_h"
+                android:background="@color/colorTextChart"
+                android:backgroundTint="@color/colorTextChart"
+                android:contentDescription="@string/content_image_chart"
+                android:foregroundTint="@color/backcard" />
+
+            <TextView
+                android:id="@+id/tvChart"
+                android:layout_width="174dp"
+                android:layout_height="42dp"
+                android:fontFamily="@font/happy_monkey"
+                android:gravity="center"
+                android:text="@string/chart_type_default_string"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
