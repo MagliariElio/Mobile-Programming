@@ -1,7 +1,6 @@
 package it.mem.myapplicationmarvel.data.model.paging.characters.charactersbyname
 
 import android.util.Log
-import android.widget.Toast
 import androidx.paging.PageKeyedDataSource
 import io.reactivex.disposables.CompositeDisposable
 import it.mem.myapplicationmarvel.data.model.api.MarvelAPI

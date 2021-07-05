@@ -22,6 +22,6 @@
         android:fitsSystemWindows="true"
         android:theme="@style/Theme.MyApplicationMarvel"
         app:headerLayout="@layout/nav_header_main"
-        app:itemIconTint="@color/ic_launcher1_background"
+        app:itemIconTint="@color/red_500"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

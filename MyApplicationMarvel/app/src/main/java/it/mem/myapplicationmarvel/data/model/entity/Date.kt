@@ -1,7 +1,6 @@
 package it.mem.myapplicationmarvel.data.model.entity
 
 import com.google.gson.annotations.SerializedName
-import it.mem.myapplicationmarvel.data.model.entity.Character
 
 data class Date<T>(@SerializedName("offset") val offset: Int,
                 @SerializedName("limit") val limit: Int,

@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Parcelable
 import android.util.Log
 import android.view.*
 import android.view.inputmethod.EditorInfo
@@ -36,12 +35,12 @@ class CharacterFragment:Fragment(){
 
 
 
-    private var recyclerState: Parcelable? = null
+//    private var recyclerState: Parcelable? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        binding= FragmentCharactersBinding.inflate(layoutInflater, container, false)
+        binding = FragmentCharactersBinding.inflate(layoutInflater, container, false)
 
 
         setUI()
@@ -125,17 +124,19 @@ class CharacterFragment:Fragment(){
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putParcelable("lmState", binding.recyclerCharacters.layoutManager?.onSaveInstanceState())
-        outState.putString("order", order)
-    }
-
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        recyclerState = savedInstanceState?.getParcelable("lmState")
-        order= savedInstanceState?.getString("order").toString()
-    }
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        super.onSaveInstanceState(outState)
+//        outState.putParcelable("lmState", binding.recyclerCharacters.layoutManager?.onSaveInstanceState())
+//        outState.putString("order", order)
+//    }
+//
+//    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+//        super.onViewStateRestored(savedInstanceState)
+//        recyclerState = savedInstanceState?.getParcelable("lmState")
+//        if(savedInstanceState?.getString("order")!=null){
+//            order= savedInstanceState.getString("order").toString()
+//        }
+//    }
 
     override fun onResume() {
         super.onResume()
@@ -148,15 +149,14 @@ class CharacterFragment:Fragment(){
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                     { list ->
-                        Log.v("NGVL", "Entrat0")
                         adapter.submitList(list)
-                        if (recyclerState != null) {
-                            binding.recyclerCharacters.layoutManager?.onRestoreInstanceState(recyclerState)
-                            recyclerState = null
-                        }
+//                        if (recyclerState != null) {
+//                            binding.recyclerCharacters.layoutManager?.onRestoreInstanceState(recyclerState)
+//                            recyclerState = null
+//                        }
                     },
                     { e ->
-                        Log.e("NGVL", "Error", e)
+                        Log.e("Marvel", "Error", e)
                     }
             )
     }

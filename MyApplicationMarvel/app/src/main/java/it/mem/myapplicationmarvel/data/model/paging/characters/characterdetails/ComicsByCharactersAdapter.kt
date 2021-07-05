@@ -9,7 +9,7 @@ import it.mem.myapplicationmarvel.databinding.ItemComicsBinding
 import it.mem.myapplicationmarvel.extensions.load
 import it.mem.myapplicationmarvel.data.model.entity.Comics
 
-class ComicsByCharactersAdapter() : PagedListAdapter<Comics, ComicsByCharactersAdapter.VH>(characterDiff) {
+class ComicsByCharactersAdapter : PagedListAdapter<Comics, ComicsByCharactersAdapter.VH>(characterDiff) {
 
     private lateinit var binding: ItemComicsBinding
     var onItemClick: ((Comics) -> Unit)? = null

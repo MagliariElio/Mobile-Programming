@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import it.mem.myapplicationmarvel.data.local.FavoriteCharacters
 import it.mem.myapplicationmarvel.data.local.FavoriteCharactersDao
 import it.mem.myapplicationmarvel.data.local.FavoriteCharactersDatabase
-import it.mem.myapplicationmarvel.data.model.entity.Character
 import it.mem.myapplicationmarvel.databinding.ItemCharacterBinding
 import it.mem.myapplicationmarvel.extensions.load
 import kotlinx.coroutines.CoroutineScope

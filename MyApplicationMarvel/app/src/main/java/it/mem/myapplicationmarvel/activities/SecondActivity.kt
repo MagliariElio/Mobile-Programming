@@ -47,18 +47,4 @@ class SecondActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-//    @SuppressLint("CheckResult")
-//    private fun subscribeToList(name:String) {
-//        viewModel.getList(name)
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                        { list ->
-//                            Log.v("NGVL", "Entrat0")
-//                            adapter.submitList(list)
-//                        },
-//                        { e ->
-//                            Log.e("NGVL", "Error", e)
-//                        }
-//                )
-//    }
 }

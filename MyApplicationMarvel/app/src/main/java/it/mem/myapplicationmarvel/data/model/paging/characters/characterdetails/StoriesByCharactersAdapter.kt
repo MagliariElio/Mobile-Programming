@@ -9,7 +9,7 @@ import it.mem.myapplicationmarvel.databinding.ItemComicsBinding
 import it.mem.myapplicationmarvel.extensions.load
 import it.mem.myapplicationmarvel.data.model.entity.Comics
 
-class StoriesByCharactersAdapter() : PagedListAdapter<Comics, StoriesByCharactersAdapter.VH>(
+class StoriesByCharactersAdapter : PagedListAdapter<Comics, StoriesByCharactersAdapter.VH>(
     characterDiff
 ) {
 

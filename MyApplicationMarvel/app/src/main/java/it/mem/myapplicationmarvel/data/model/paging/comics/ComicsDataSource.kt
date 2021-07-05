@@ -40,7 +40,7 @@ class ComicsDataSource (private val marvelAPI: MarvelAPI, private val compositeD
             marvelAPI.allComics(requestedPage*requestedLoadSize)
                 .subscribe(
                        {response->
-                           Log.d("NGVL", "Loading page: $requestedPage")
+                           Log.d("Marvel", "Loading page: $requestedPage")
                            initialCallback?.onResult(response.data.results, null, adjacentPage)
                            callback?.onResult(response.data.results, adjacentPage)
                         }, {t->

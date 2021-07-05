@@ -22,7 +22,7 @@ class SeriesByCharactersViewModel :ViewModel(){
 
         val pageSize = 20
 
-        val seriesByCharactersFactory: SeriesByCharactersDataSourceFactory = SeriesByCharactersDataSourceFactory(compositeDisposable, MarvelAPI.getService(), id)
+        val seriesByCharactersFactory = SeriesByCharactersDataSourceFactory(compositeDisposable, MarvelAPI.getService(), id)
 
         Log.d("Marvel", "$id")
 

@@ -1,6 +1,8 @@
 package it.mem.myapplicationmarvel.activities
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
@@ -98,7 +100,7 @@ class CharacterDetailsActivity : AppCompatActivity() {
                     binding.recyclerStories.layoutManager = llm
                     binding.recyclerStories.adapter = adapterStories
                     subscribeToStoriesList(character.id)
-                    val builder=SpannableStringBuilder()
+                    /*val builder=SpannableStringBuilder()
                     character.urls.forEach {
                         builder.append(
                                 " "+it.type+": "+it.url+"\n\n",
@@ -109,7 +111,32 @@ class CharacterDetailsActivity : AppCompatActivity() {
                     binding.txtUrlsList.text = builder
                     binding.txtUrlsList.linksClickable=true
 
+                     */
+                    val lenght=character.urls.size
+                    if(lenght>0)
+                        binding.txtDetail.text = character.urls[0].type
+                    if(lenght>1)
+                        binding.txtWiki.text = character.urls[1].type
+                    if(lenght>2)
+                        binding.txtComiclink.text = character.urls[2].type
 
+                    binding.txtDetail.setOnClickListener{
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.data = Uri.parse(character.urls[0].url)
+                        startActivity(intent)
+                    }
+
+                    binding.txtWiki.setOnClickListener{
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.data = Uri.parse(character.urls[1].url)
+                        startActivity(intent)
+                    }
+
+                    binding.txtComiclink.setOnClickListener{
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.data = Uri.parse(character.urls[2].url)
+                        startActivity(intent)
+                    }
 
 
                     favoriteCharacter = FavoriteCharacters(character.id, character.name, "${character.thumbnail.path}.${character.thumbnail.extension}")
@@ -200,7 +227,6 @@ class CharacterDetailsActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { list ->
-                            Log.v("NGVL", "Entrat0")
                             adapterComics.submitList(list)
                             if (recyclerStateComics != null) {
                                 binding.recyclerComics.layoutManager?.onRestoreInstanceState(recyclerStateComics)
@@ -208,7 +234,7 @@ class CharacterDetailsActivity : AppCompatActivity() {
                             }
                         },
                         { e ->
-                            Log.e("NGVL", "Error", e)
+                            Log.e("Marvel", "Error", e)
                         }
                 )
     }
@@ -219,7 +245,6 @@ class CharacterDetailsActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { list ->
-                    Log.v("NGVL", "Entrat0")
                     adapterSeries.submitList(list)
                     if (recyclerStateSeries != null) {
                         binding.recyclerSeries.layoutManager?.onRestoreInstanceState(recyclerStateSeries)
@@ -227,7 +252,7 @@ class CharacterDetailsActivity : AppCompatActivity() {
                     }
                 },
                 { e ->
-                    Log.e("NGVL", "Error", e)
+                    Log.e("Marvel", "Error", e)
                 })
     }
 
@@ -238,7 +263,6 @@ class CharacterDetailsActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { list ->
-                    Log.v("NGVL", "Entrat0")
                     adapterStories.submitList(list)
                     if (recyclerStateStories != null) {
                         binding.recyclerStories.layoutManager?.onRestoreInstanceState(recyclerStateStories)
@@ -246,7 +270,7 @@ class CharacterDetailsActivity : AppCompatActivity() {
                     }
                 },
                 { e ->
-                    Log.e("NGVL", "Error", e)
+                    Log.e("Marvel", "Error", e)
                 })
     }
 
